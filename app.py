@@ -16,6 +16,7 @@ def man():
 @app.route('/predict', methods=['POST'])
 def main():
     
+    man()
    
     int_features = [x for x in request.form.values()]
   
