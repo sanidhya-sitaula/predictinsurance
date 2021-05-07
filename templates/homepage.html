@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Insurance Claim Predictor</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+  <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center black-text">Insurance Claim Predictor</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict your probability of filing an insurance claim.
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "AGE"><b>Age</b></label>
+            <br>
+          <input   id = "AGE" name='AGE' type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Income"><b>Income </b></label>
+            <br>
+          <input id="INCOME"  name = "INCOME" type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="BLUEBOOK"><b>Bluebook Value of your car</b></label>
+            <br>
+          <input id="BLUEBOOK" name="BLUEBOOK" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "OLDCLAIM"><b>Total value of your past claims</b></label>
+            <br>
+          <input   id = "OLDCLAIM" name='OLDCLAIM' type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="TRAVTIME"><b>Travel Time (from home to work) </b></label>
+            <br>
+          <input id="TRAVTIME"  name="TRAVTIME <type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="MVR_PTS"><b>Number of tickets you've received in the past</b></label>
+            <br>
+          <input id="MVR_PTS" name="MVR_PTS" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "YOJ"><b>Number of years on job</b></label>
+            <br>
+            <input id="YOJ" name="YOJ" type="text" class="validate">
+        
+        </div>
+        <div class="input-field col s4">
+
+          <label for="CAR_AGE"><b>Car's Age</b></label>
+            <br>
+          <input id="CAR_AGE"  name="CAR_AGE" type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="TIF"><b>Time in Force (in years)</b></label>
+            <br>
+          <input id="TIF" name="TIF" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "CLM_FREQ"><b>Number of Claims made in the past 5 years</b></label>
+            <br>
+            <input id="CLM_FREQ" name="CLM_FREQ" type="text" class="validate">
+        
+        </div>
+       
+      </div>
+
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light red">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br><h4 align="center"<b>{{pred}}</b></h4>
+        <br>
+
+    </div>
+  </div>
+
+
+   <footer class="page-footer grey">
+    <div class="container">
+      <div class="row">
+        <div class="col l9 s12">
+          <h5 class="white-text">Bio</h5>
+          <p class="grey-text text-lighten-4">This webpage is powered by Flask. This is a part of my final project for NYU's Mining Massive Datasets.</p>
+
+        </div>
+       
+        <div class="col l3 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Annotated Notebook for this project</a></li>
+
+            <li><a class="white-text" href="https://github.com/sanidhya-sitaula">Github</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/sanidhya-sitaula-680309161/">LinkedIn</a></li>
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <p class="grey-text text-lighten-3">Copyright Sanidhya Sitaula, 2021</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../static/js/materialize.js"></script>
+  <script src="../static/js/init.js"></script>
+
+  </body>
+</html>

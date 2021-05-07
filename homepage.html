@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Insurance Claim Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict if someone's car will crash and the amount of insurance claim they will file.
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "AGE"><b>Age</b></label>
+            <br>
+          <input   id = "AGE" name='AGE' type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Income"><b>Income </b></label>
+            <br>
+          <input id="INCOME"  name = "INCOME" type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="BLUEBOOK"><b>Bluebook Value of your car</b></label>
+            <br>
+          <input id="BLUEBOOK" name="BLUEBOOK" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "OLDCLAIM"><b>Total value of your past claims</b></label>
+            <br>
+          <input   id = "OLDCLAIM" name='OLDCLAIM' type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="TRAVTIME"><b>Travel Time (from home to work) </b></label>
+            <br>
+          <input id="TRAVTIME"  name="TRAVTIME <type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="MVR_PTS"><b>Number of tickets you've received in the past</b></label>
+            <br>
+          <input id="MVR_PTS" name="MVR_PTS" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "YOJ"><b>Number of years on job</b></label>
+            <br>
+            <input id="YOJ" name="YOJ" type="text" class="validate">
+        
+        </div>
+        <div class="input-field col s4">
+
+          <label for="CAR_AGE"><b>Car's Age</b></label>
+            <br>
+          <input id="CAR_AGE"  name="CAR_AGE" type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="TIF"><b>Time in Force (in years)</b></label>
+            <br>
+          <input id="TIF" name="TIF" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="input-field col s4">
+            <label for = "CLM_FREQ"><b>Number of Claims made in the past 5 years</b></label>
+            <br>
+            <input id="CLM_FREQ" name="CLM_FREQ" type="text" class="validate">
+        
+        </div>
+       
+      </div>
+
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+   
+      <br><h4 align="center"<b>{{pred}}</b></h4>
+      <h4 align = "center"><b>Estimated amount is </b></h4>
+        <br>
+
+    </div>
+  </div>
+
+  <!--
+  <div class="container">
+    <div class="section">
+
+
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Crime Reports</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+
+              <button class="btn waves-effect waves-light" type="submit" name="action">Check
+    <i class="material-icons right">send</i>
+              </button>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Crime Prediction</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+            <a href="/crime"> <button class="btn waves-effect waves-light"  name="">
+    <i class="material-icons right">Predict Crime</i><button></a>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Check on Map</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+              </button>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+  </div>>
+-->
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l9 s12">
+          <h5 class="white-text">Bio</h5>
+          <p class="grey-text text-lighten-4">This webpage is powered by Flask. This is a part of my final project for NYU's Mining Massive Datasets.</p>
+
+
+        </div>
+       
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../static/js/materialize.js"></script>
+  <script src="../static/js/init.js"></script>
+
+  </body>
+</html>
